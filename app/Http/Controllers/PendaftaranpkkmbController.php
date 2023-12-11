@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
 
 class PendaftaranpkkmbController extends Controller
@@ -17,10 +18,13 @@ class PendaftaranpkkmbController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+    public function create(Request $request)
+{
+    
+
+    //return redirect('/pendaftaran_pkkmb/daftar')->with('success', 'Data Berhasil ditambahkan');
+}
+
 
     /**
      * Store a newly created resource in storage.

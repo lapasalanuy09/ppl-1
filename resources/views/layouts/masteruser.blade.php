@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Arsha Bootstrap Template - Index</title>
+    <title>PENDAFTRAN PKKMB</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -47,7 +47,7 @@
 		@include('layouts.includes._sidebar')
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
-        @yield('content1')
+    @yield('content1')
 		<!-- END MAIN -->
 
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

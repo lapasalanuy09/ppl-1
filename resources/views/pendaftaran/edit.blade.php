@@ -11,7 +11,7 @@
                                 <h3 class="panel-title">Data Mahasiswa</h3>
                             </div>
                             <div class="panel-body">
-                                <form action="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{-- data pribadi --}}
                                     <div class="col-md-6">
@@ -98,7 +98,7 @@
                                     <h3 class="panel-title">Data Orang Tua</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <form action="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                    <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                     {{-- data ortu --}}
                                     <div class="col-md-6 float-left">
@@ -132,7 +132,7 @@
                                     <h3 class="panel-title">Data Merchandise</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <form action="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                    <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                     {{-- data merchandise --}}
                                     <div class="form-group">

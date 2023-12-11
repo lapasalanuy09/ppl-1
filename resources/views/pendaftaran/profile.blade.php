@@ -47,7 +47,7 @@
                             <div class="profile-info">
 
                             </div>
-                            <div class="text-center"><a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/edit" class="btn btn-primary">Edit Profile</a></div>
+                            <div class="text-center"><a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="btn btn-primary">Edit Profile</a></div>
                         </div>
                         <!-- END PROFILE DETAIL -->
                     </div>

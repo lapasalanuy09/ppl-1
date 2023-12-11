@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\PendaftaranpkkmbController;
 use App\Http\Controllers\DataKegiatanController;
+use App\Http\Controllers\DetailkegiatanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Middleware\CheckRole;
 
@@ -58,12 +59,12 @@ Route::controller(RegisterController::class)->group(function () {
 
 Route::group(['middleware'=>['auth','checkRole:admin']], function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/pendaftaran', [PendaftaranController::class, 'index']);
-    Route::post('/pendaftaran/create', [PendaftaranController::class, 'create']);
-    Route::get('/pendaftaran/{no_pendaftaran}/edit', [PendaftaranController::class, 'edit']);
-    Route::post('/pendaftaran/{no_pendaftaran}/update', [PendaftaranController::class, 'update']);
-    Route::get('/pendaftaran/{no_pendaftaran}/delete',  [PendaftaranController::class, 'delete']);
-    Route::get('/pendaftaran/{no_pendaftaran}/profile',  [PendaftaranController::class, 'profile']);
+    Route::get('/pendaftaran-mahasiswa', [PendaftaranController::class, 'index']);
+    Route::post('/pendaftaran-mahasiswa/create', [PendaftaranController::class, 'create']);
+    Route::get('/pendaftaran-mahasiswa/{no_pendaftaran}/edit', [PendaftaranController::class, 'edit']);
+    Route::post('/pendaftaran-mahasiswa/{no_pendaftaran}/update', [PendaftaranController::class, 'update']);
+    Route::get('/pendaftaran-mahasiswa/{no_pendaftaran}/delete',  [PendaftaranController::class, 'delete']);
+    Route::get('/pendaftaran-mahasiswa/{no_pendaftaran}/profile',  [PendaftaranController::class, 'profile']);
     Route::get('/data-kegiatan', [DataKegiatanController::class, 'index']);
     Route::post('/data-kegiatan/create', [DataKegiatanController::class, 'create']);
     Route::get('/data-kegiatan/{id}/edit', [DataKegiatanController::class, 'edit']);
@@ -75,5 +76,7 @@ Route::group(['middleware'=>['auth','checkRole:admin']], function(){
 Route::group(['middleware'=>['auth','checkRole:admin,user']], function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('pendaftaranpkkmb',[PendaftaranpkkmbController::class, 'index']);
+    Route::get('/pendaftaran_pkkmb/daftar', [PendaftaranpkkmbController::class, 'create']);
+    Route::get('/detail-kegiatan', [DetailkegiatanController::class, 'index']);
 
 });

@@ -38,9 +38,9 @@
                                             <td>{{$pendaftaran ->jurusan}}</td>
                                             <td>{{$pendaftaran ->alamat_domisili}}</td>
                                             <td>
-                                                <a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/profile" class="btn- btn-primary btn-sm">Info</a>
-                                                <a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/edit" class="btn- btn-warning btn-sm">Edit</a>
-                                                <a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/delete" class="btn- btn-danger btn-sm" onclick="return confirm ('Yakin Mau Menghapus Data ?')">Delete</a>
+                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/profile" class="btn- btn-primary btn-sm">Info</a>
+                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="btn- btn-warning btn-sm">Edit</a>
+                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/delete" class="btn- btn-danger btn-sm" onclick="return confirm ('Yakin Mau Menghapus Data ?')">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -64,7 +64,7 @@
             </button>
             </div>
             <div class="modal-body">
-                <form action="/pendaftaran/create" method="POST" enctype="multipart/form-data">
+                <form action="/pendaftaran-mahasiswa/create" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{-- data pribadi --}}
                     <div class="form-group">
