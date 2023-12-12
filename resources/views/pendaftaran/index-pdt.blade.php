@@ -10,7 +10,7 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Data Pendaftar</h3>
                                 <div class="right">
-                                    <button type="button" class=" btn"data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary ">Daftar</i></button>
+                                    <button type="button" class=" btn"data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary ">Tambah Pendaftar</i></button>
                                 </div>
                             </div>
                             <div class="panel-body">
@@ -38,9 +38,11 @@
                                             <td>{{$pendaftaran ->jurusan}}</td>
                                             <td>{{$pendaftaran ->alamat_domisili}}</td>
                                             <td>
-                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/profile" class="btn- btn-primary btn-sm">Info</a>
-                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="btn- btn-warning btn-sm">Edit</a>
-                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/delete" class="btn- btn-danger btn-sm" onclick="return confirm ('Yakin Mau Menghapus Data ?')">Delete</a>
+                                                <div class="d-flex">
+                                                    <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/profile" class="label label-primary">Info</a>
+                                                    <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="label label-warning">Edit</a>
+                                                    <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/delete" class="label label-danger" onclick="return confirm ('Yakin Mau Menghapus Data ?')">Delete</a>
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach

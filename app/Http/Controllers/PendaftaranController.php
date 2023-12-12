@@ -54,7 +54,7 @@ class PendaftaranController extends Controller
 
             return "Gagal menambahkan user: " . $e->getMessage();
         }
-        return redirect('/pendaftaran')->with('success','Data Berhasil ditambahkan');
+        return redirect('/pendaftaran-mahasiswa')->with('success','Data Berhasil ditambahkan');
 
 
 
@@ -69,21 +69,21 @@ class PendaftaranController extends Controller
             // Handle kasus jika data pendaftaran tidak ditemukan
             abort(404); // Menampilkan halaman 404 Not Found
         }
-        return view('pendaftaran/edit', compact('pendaftaran'));
+        return view('pendaftaran-mahasiswa/edit', compact('pendaftaran'));
     }
     public function update(Request $request, $no_pendaftaran)
     {
         $pendaftaran=Pendaftaran::find($no_pendaftaran);
         $pendaftaran->update($request->all());
 
-        return redirect('/pendaftaran')->with('success','Data Berhasil diupdate');
+        return redirect('/pendaftaran-mahasiswa')->with('success','Data Berhasil diupdate');
 
     }
     public function delete($no_pendaftaran)
     {
         $pendaftaran= Pendaftaran::find($no_pendaftaran);
         $pendaftaran->delete($pendaftaran);
-        return redirect ('/pendaftaran')->with('success','Data Berhasil dihapus');
+        return redirect ('/pendaftaran-mahasiswa')->with('success','Data Berhasil dihapus');
     }
     public function profile($no_pendaftaran)
     {

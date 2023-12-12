@@ -47,14 +47,15 @@
 		@include('layouts.includes._sidebar')
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
-    @yield('content1')
+        @yield('content1')
 		<!-- END MAIN -->
 
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
         <script src="assets/vendor/aos/aos.js"></script>
-        <!-- Vendor JS Files --><script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
         <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
         <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -66,6 +67,8 @@
 
 
 
-      </body>
+
+    </div>
+</body>
 
 </html>
