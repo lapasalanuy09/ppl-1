@@ -12,7 +12,7 @@
                         <div class="profile-header">
                             <div class="overlay"></div>
                             <div class="profile-main">
-                                <img src="{{$pendaftaran->getProfil()}}" class="img-circle"width="100" height="100" alt="Foto Profil">
+                                <img src="{{asset('storage/' . $pendaftaran->profil)}}" class="img-circle"width="100" height="100" alt="Foto Profil">
                                 <h3 class="name">{{$pendaftaran->nama}}</h3>
                                 <span class="online-status status-available">Available</span>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="profile-info">
 
                             </div>
-                            <div class="text-center"><a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/edit" class="btn btn-primary">Edit Profile</a></div>
+                            <div class="text-center"><a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="btn btn-primary">Edit Profile</a></div>
                         </div>
                         <!-- END PROFILE DETAIL -->
                     </div>

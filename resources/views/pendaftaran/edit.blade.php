@@ -11,14 +11,13 @@
                                 <h3 class="panel-title">Data Mahasiswa</h3>
                             </div>
                             <div class="panel-body">
-                                <form action="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{-- data pribadi --}}
                                     <div class="col-md-6">
                                     <div class="form-group float-left">
                                         <label for="exampleInputEmail1">No Pendaftaran</label>
                                         <input name='no_pendaftaran' type="text" class="form-control" id="no_pendaftaran" aria-describedby="emailHelp" placeholder="Input No Pendaftaran" value="{{$pendaftaran->no_pendaftaran}}">
-
                                         </div>
                                     </div>
                                     <div class="col-md-6 float-right">
@@ -56,8 +55,15 @@
                                     </div>
                                     <div class="col-md-6 float-left">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Agama</label>
-                                        <input name='agama' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama"value="{{$pendaftaran->agama}}">
+                                        <label for="exampleFormControlSelect1">Agama</label>
+                                        <select name='agama'class="form-control" id="exampleFormControlSelect1" placeholder="Pilih Agama">
+                                            <option value="Islam" {{ $pendaftaran->agama == "Islam" ? 'selected' : '' }}>Islam</option>
+                                            <option value="Protestan" {{ $pendaftaran->agama == "Protestan" ? 'selected' : '' }}>Protestan</option>
+                                            <option value="Katolik" {{ $pendaftaran->agama == "Katolik" ? 'selected' : '' }}>Katolik</option>
+                                            <option value="Hindu" {{ $pendaftaran->agama == "Hindu" ? 'selected' : '' }}>Hindu</option>
+                                            <option value="Buddha" {{ $pendaftaran->agama == "Buddha" ? 'selected' : '' }}>Buddha</option>
+                                            <option value="Konghucu" {{ $pendaftaran->agama == "Konghucu" ? 'selected' : '' }}>Konghucu</option>
+                                        </select>
                                     </div>
                                     </div>
                                     <div class="col-md-6 float-right">
@@ -98,7 +104,7 @@
                                     <h3 class="panel-title">Data Orang Tua</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <form action="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                    <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                     {{-- data ortu --}}
                                     <div class="col-md-6 float-left">
@@ -132,7 +138,7 @@
                                     <h3 class="panel-title">Data Merchandise</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <form action="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                    <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                     {{-- data merchandise --}}
                                     <div class="form-group">

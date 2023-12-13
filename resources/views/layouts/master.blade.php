@@ -19,6 +19,8 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('template/assets/img/Logo.png')}}">
 	<link rel="icon" type="image/png" sizes="96x96" href="{{asset('template/assets/img/Logo.png')}}">
+	
+
 </head>
 
 <body>
@@ -32,6 +34,7 @@
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
         @yield('content')
+		@include('sweetalert::alert')
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
@@ -39,6 +42,7 @@
 				<p class="copyright"> by <i class="fa fa-love"></i>Ratna & nanda</p>
 			</div>
 		</footer>
+
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->

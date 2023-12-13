@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
-use Illuminate\Console\View\Components\Alert;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PendaftaranController extends Controller
 {
@@ -54,11 +55,8 @@ class PendaftaranController extends Controller
 
             return "Gagal menambahkan user: " . $e->getMessage();
         }
-        return redirect('/pendaftaran')->with('success','Data Berhasil ditambahkan');
-
-
-
-
+        toast('Data Berhasil Ditambahkan','success');
+        return redirect('/pendaftaran-mahasiswa');
     }
     public function edit($no_pendaftaran)
     {
@@ -76,14 +74,16 @@ class PendaftaranController extends Controller
         $pendaftaran=Pendaftaran::find($no_pendaftaran);
         $pendaftaran->update($request->all());
 
-        return redirect('/pendaftaran')->with('success','Data Berhasil diupdate');
+        toast('Data Berhasil Di Update','success');
+        return redirect('/pendaftaran-mahasiswa');
 
     }
     public function delete($no_pendaftaran)
     {
         $pendaftaran= Pendaftaran::find($no_pendaftaran);
         $pendaftaran->delete($pendaftaran);
-        return redirect ('/pendaftaran')->with('success','Data Berhasil dihapus');
+        toast('Data Berhasil Dihapus','success');
+        return redirect ('/pendaftaran-mahasiswa');
     }
     public function profile($no_pendaftaran)
     {

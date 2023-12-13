@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Admin;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class AdminSeeder extends Seeder
 {
@@ -13,15 +14,15 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::create([
-            "name"=> "Admin",
+        User::create([
+            "nama"=> "Admin",
             "email"=> "admin@gmail.com",
             "role"=> "admin",
             "password"=> bcrypt("admin321"),
         ]);
 
-        Admin::create([
-            "name"=> "User",
+        User::create([
+            "nama"=> "User",
             "email"=> "user@gmail.com",
             "role"=> "user",
             "password"=> bcrypt("user321"),

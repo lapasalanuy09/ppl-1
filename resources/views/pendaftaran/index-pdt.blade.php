@@ -10,18 +10,18 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Data Pendaftar</h3>
                                 <div class="right">
-                                    <button type="button" class=" btn"data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary ">Daftar</i></button>
+                                    <button type="button" class=" btn"data-toggle="modal" data-target="#exampleModal"><i class="btn btn-primary ">Tambah Data</i></button>
                                 </div>
                             </div>
                             <div class="panel-body">
                                 <table class="table">
                                     <thead>
                                         <tr>
+                                            <th>NO PENDAFTARAN </th>
                                             <th>NAMA </th>
                                             <th>NPM </th>
-                                            <th>JENIS KELAMIN </th>
+                                            <th>JK </th>
                                             <th>AGAMA </th>
-                                            <th>ANGKATAN </th>
                                             <th>JURUSAN </th>
                                             <th>ALAMAT </th>
                                             <th>AKSI </th>
@@ -30,17 +30,17 @@
                                     <tbody>
                                         @foreach ( $data_pendaftaran as $pendaftaran)
                                         <tr>
+                                            <td>{{$pendaftaran ->no_pendaftaran}}</td>
                                             <td>{{$pendaftaran ->nama}}</td>
                                             <td>{{$pendaftaran ->npm}}</td>
                                             <td>{{$pendaftaran ->jenis_kelamin}}</td>
                                             <td>{{$pendaftaran ->agama}}</td>
-                                            <td>{{$pendaftaran ->angkatan}}</td>
                                             <td>{{$pendaftaran ->jurusan}}</td>
                                             <td>{{$pendaftaran ->alamat_domisili}}</td>
                                             <td>
-                                                <a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/profile" class="btn- btn-primary btn-sm">Info</a>
-                                                <a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/edit" class="btn- btn-warning btn-sm">Edit</a>
-                                                <a href="/pendaftaran/{{$pendaftaran->no_pendaftaran}}/delete" class="btn- btn-danger btn-sm" onclick="return confirm ('Yakin Mau Menghapus Data ?')">Delete</a>
+                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/profile" class="btn- btn-primary btn-sm">Info</a>
+                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="btn- btn-warning btn-sm">Edit</a>
+                                                <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/delete" class="btn- btn-danger btn-sm" onclick="return confirm ('Yakin Mau Menghapus Data ?')">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -64,7 +64,7 @@
             </button>
             </div>
             <div class="modal-body">
-                <form action="/pendaftaran/create" method="POST" enctype="multipart/form-data">
+                <form action="/pendaftaran-mahasiswa/create" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{-- data pribadi --}}
                     <div class="form-group">
@@ -74,7 +74,6 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nama Lengkap</label>
                       <input name='nama'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Nama">
-
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">NPM</label>
@@ -89,15 +88,22 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tempat Lahir</label>
-                        <input name='tempat_lahir'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tempat lahir">
+                        <input name='tempat_lahir'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Tempat lahir">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tanggal lahir</label>
-                        <input name='tanggal_lahir'type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tanggallahir">
+                        <input name='tanggal_lahir'type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Tanggal ahir">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Agama</label>
-                        <input name='agama' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama">
+                        <select name='agama' class="form-control" id="exampleFormControlSelect1" placeholder="Pilih Agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Protestan">Protestan</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                          </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">email</label>
@@ -120,23 +126,22 @@
                         <input name='profil'type="file" class="form-control">
                     </div>
 
-
                     {{-- data ortu --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Ibu</label>
-                        <input name='nama_ibu'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tanggallahir">
+                        <input name='nama_ibu'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Ibu">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Ayah</label>
-                        <input name='nama_ayah'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tanggallahir">
+                        <input name='nama_ayah'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Ayah">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Pekerjaan Ibu</label>
-                        <input name='pekerjaan_ibu'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tanggallahir">
+                        <input name='pekerjaan_ibu'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pekerjaan Ibu">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Pekerjaan Ayah</label>
-                        <input name='pekerjaan_ayah'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tanggallahir">
+                        <input name='pekerjaan_ayah'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pekerjaan Ayah">
                     </div>
                     {{-- data merchandise --}}
                     <div class="form-group">
@@ -168,7 +173,3 @@
     </div>
 
 @stop
-
-
-
-

@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pendaftaran extends Model
 {
-    public function pendaftaran()
+    public function user()
     {
-        return $this->hasOne(Pendaftaran::class);
+        return $this->belongsTo(User::class);
     }
     protected $table = 'pendaftaran';
-    protected $guarded = [];
+    protected $guarded = ['user_id'];
     protected $primaryKey = 'no_pendaftaran';
-    //protected $fillable = ['nama','npm', 'jenis_kelamin', 'agama', 'angkatan', 'jurusan', 'alamat_domisili','profil','user_id'];
+    
     public static $rules = [
         'pembelian_merchandise' => 'in:Ya,Tidak', // Hanya menerima nilai "Ya" atau "Tidak"
     ];

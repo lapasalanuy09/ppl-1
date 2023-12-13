@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label for="signin-password" class="control-label sr-only">Password Confirmation</label>
                             <input name="password_confirmation"type="password"
-                                class="form-control{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                                class="form-control{{ $errors->has('password') ? 'is-invalid' : '' }}"
                                 id="signin-password" placeholder="Konfirmasi Password">
                             @error('password_confirmation')
                                 <div class='invalid-feedback'>{{ $message }}</div>

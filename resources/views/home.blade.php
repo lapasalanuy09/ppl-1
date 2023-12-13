@@ -8,7 +8,8 @@
     <meta name="author" content="">
     <title>PKKMB Universitas Bengkulu</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{asset('template/assets/img/Logo.png')}}">
     <!-- Bootstrap Icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Google fonts-->
@@ -22,11 +23,11 @@
         .d-none {
             display: none;
         }
-
+        
         .invalid-feedback {
             display: none;
         }
-
+        
         .btn.disabled {
             pointer-events: none;
             opacity: 0.65;
@@ -38,25 +39,25 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="http://127.0.0.1:8000/" style="color: black;">PKKMB UNIB</a>
+            <a class="navbar-brand" href="http://127.0.0.1:8000/" style="color: white;">PKKMB UNIB</a> 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about" style="color: black;">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services" style="color: black;">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio" style="color: black;">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" style="color: black;">Kontak</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login" style="color: black;">Masuk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" style="color: white;">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" style="color: white;">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio" style="color: white;">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" style="color: white;">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login" style="color: white;">Masuk</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead" style="background: url('template/assets/img/green.jpg') center center / cover no-repeat; opacity: 0.7;">
+    <header class="masthead" style="background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),url('template/assets/img/green.jpg') center center / cover no-repeat;">
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-black font-weight-bold">PKKMB Universitas Bengkulu</h1>
+                    <h1 class="text-white font-weight-bold">PKKMB Universitas Bengkulu</h1>
                     <hr class="divider">
                 </div>
                 <div class="col-lg-8 align-self-baseline">
