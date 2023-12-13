@@ -78,7 +78,6 @@ class PendaftaranController extends Controller
         $pendaftaran->update($request->all());
         toast('Data Berhasil Di Update','success');
         return redirect('/pendaftaran-mahasiswa');
-
     }
 
     public function delete($no_pendaftaran)

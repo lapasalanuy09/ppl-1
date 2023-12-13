@@ -73,9 +73,9 @@
                       <label for="exampleInputEmail1">Lokasi</label>
                       <input name='lokasi'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Lokasi">
                     </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Timeline</label>
-                        <input name='timeline'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Timeline">
+                    <div class="form-group">
+                        <label for="photo" class="form-label">Timeline</label><br>
+                        <input name='timeline' type="file" id="photo" name="photo" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Pemateri</label>

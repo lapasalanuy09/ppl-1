@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Data_Kegiatan;
-use App\Models\Data_kegiatan as ModelsData_kegiatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Console\View\Components\Alert;
 
 class DataKegiatanController extends Controller
@@ -23,29 +23,58 @@ class DataKegiatanController extends Controller
     }
     public function create(Request $request)
     {
-        Data_kegiatan::create($request->all());
-        return redirect('/data-kegiatan')->with('success','Data Berhasil ditambahkan');
+        $request->validate([
+            'timeline' => 'image|mimes:jpeg,png,jpg', // sesuaikan dengan jenis file dan batas ukuran yang diinginkan
+            // tambahkan validasi atau aturan lain sesuai kebutuhan
+        ]);
+
+        $input = $request->all();
+
+        // Upload gambar jika ada
+        if ($request->hasFile('timeline')) {
+            $imageName = time().'.'.$request->timeline->extension();
+            $request->timeline->storeAs('public/timeline_images', $imageName);
+            $input['timeline'] = $imageName;
+        }
+
+        Data_Kegiatan::create($input);
+
+        toast('Data Berhasil Ditambahkan','success');
+        return redirect('/data-kegiatan');
     }
     public function edit($id)
     {
-        // $data= Data_kegiatan::find($id);
-
-        // $data = \App\Models\Data_kegiatan::where('id', $id)->first();
-        // return redirect()->route('/data-kegiatan/{id}/edit', ['id' => $id]);
-            // $data= Data_kegiatan::find($id);
-            // $data = \App\Models\Data_kegiatan::where('id', $id)->first();
-            $data = Data_kegiatan::find($id);
-
-
+        $data = Data_kegiatan::find($id);
         return view('data_kegiatan.edit', compact('data'));
     }
-    public function update(Request $request, $id)
+     public function update(Request $request, $id)
     {
-        // \App\Models\Data_kegiatan::create($request->all());
-        $data = Data_kegiatan::find($id);
-        $data->update($request->all());
+        $data = Data_Kegiatan::find($id);
 
-        return redirect('/data-kegiatan')->with('success','Data Berhasil ditambahkan');
+        $request->validate([
+            'timeline' => 'image|mimes:jpeg,png,jpg', // sesuaikan dengan jenis file dan batas ukuran yang diinginkan
+            // tambahkan validasi atau aturan lain sesuai kebutuhan
+        ]);
+
+        $input = $request->all();
+
+        // Upload gambar jika ada
+        if ($request->hasFile('timeline')) {
+            // Hapus file lama jika ada
+            if ($data->timeline) {
+                Storage::delete('public/timeline_images/' . $data->timeline);
+            }
+
+            // Simpan file baru
+            $imageName = time().'.'.$request->timeline->extension();
+            $request->timeline->storeAs('public/timeline_images', $imageName);
+            $input['timeline'] = $imageName;
+        }
+
+        $data->update($input);
+
+        toast('Data Berhasil Di Update','success');
+        return redirect('/data-kegiatan');
     }
     public function delete($id)
     {
@@ -53,6 +82,7 @@ class DataKegiatanController extends Controller
         $data = \App\Models\Data_kegiatan::find($id);
         $data->delete();
 
-        return redirect('/data-kegiatan')->with('success','Data Berhasil ditambahkan');
+        toast('Data Berhasil Dihapus','success');
+        return redirect('/data-kegiatan');
     }
 }
