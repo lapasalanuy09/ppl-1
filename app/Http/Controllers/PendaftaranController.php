@@ -69,7 +69,7 @@ class PendaftaranController extends Controller
             // Handle kasus jika data pendaftaran tidak ditemukan
             abort(404); // Menampilkan halaman 404 Not Found
         }
-        return view('pendaftaran-mahasiswa/edit', compact('pendaftaran'));
+        return view('pendaftaran/edit', compact('pendaftaran'));
     }
 
     public function update(Request $request, $no_pendaftaran)

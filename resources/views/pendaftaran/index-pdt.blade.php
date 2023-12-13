@@ -17,26 +17,26 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>NO PENDAFTARAN </th>
                                             <th>NAMA </th>
                                             <th>NPM </th>
                                             <th>JK </th>
                                             <th>AGAMA </th>
                                             <th>JURUSAN </th>
                                             <th>ALAMAT </th>
+                                            <th>MERCHANDISE </th>
                                             <th>AKSI </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ( $data_pendaftaran as $pendaftaran)
                                         <tr>
-                                            <td>{{$pendaftaran ->no_pendaftaran}}</td>
                                             <td>{{$pendaftaran ->nama}}</td>
                                             <td>{{$pendaftaran ->npm}}</td>
                                             <td>{{$pendaftaran ->jenis_kelamin}}</td>
                                             <td>{{$pendaftaran ->agama}}</td>
                                             <td>{{$pendaftaran ->jurusan}}</td>
                                             <td>{{$pendaftaran ->alamat_domisili}}</td>
+                                            <td>{{$pendaftaran ->pembelian_merchandise}}</td>
                                             <td>
                                                 <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/profile" class="btn- btn-primary btn-sm">Info</a>
                                                 <a href="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/edit" class="btn- btn-warning btn-sm">Edit</a>
