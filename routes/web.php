@@ -20,7 +20,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/postlogin', 'postlogin');
     Route::get('/logout', 'logout');
-
 });
 
 Route::controller(RegisterController::class)->group(function () {
@@ -41,7 +40,6 @@ Route::group(['middleware'=>['auth','checkRole:admin']], function(){
     Route::get('/data-kegiatan/{id}/edit', [DataKegiatanController::class, 'edit']);
     Route::post('/data-kegiatan/{id}/update', [DataKegiatanController::class, 'update']);
     Route::get('/data-kegiatan/{id}/delete',  [DataKegiatanController::class, 'delete']);
-
 });
 
 Route::group(['middleware'=>['auth','checkRole:admin,user']], function(){
@@ -50,5 +48,4 @@ Route::group(['middleware'=>['auth','checkRole:admin,user']], function(){
     Route::get('/pendaftaran_pkkmb/daftar',[PendaftaranpkkmbController::class, 'create']);
     Route::post('/pendaftaran_pkkmb/daftar',[PendaftaranpkkmbController::class, 'store']);
     Route::get('/detail-kegiatan', [DetailkegiatanController::class, 'index']);
-
 });

@@ -26,9 +26,7 @@ class PendaftaranpkkmbController extends Controller
     }
         
     public function store(Request $request)
-    {
-       
-        
+    {   
        $data = $request->validate([
             'no_pendaftaran' => '',
             'nama' => '',

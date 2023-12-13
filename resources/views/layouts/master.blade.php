@@ -27,7 +27,7 @@
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<!-- NAVBAR -->
-		@include('layouts.includes._navbar')
+        @include('layouts.includes._navbar')
 		<!-- END NAVBAR -->
 		<!-- LEFT SIDEBAR -->
 		@include('layouts.includes._sidebar')
@@ -50,7 +50,8 @@
 	<script src="{{asset('template/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 	<script src="{{asset('template/assets/scripts/klorofil-common.js')}}"></script>
-
+    <script src="{{asset('template/assets/vendor/chartist/js/chartist.min.js')}}"></script>
+    
 </body>
 
 </html>
