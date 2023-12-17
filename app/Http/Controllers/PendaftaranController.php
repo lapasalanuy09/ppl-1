@@ -11,17 +11,17 @@ use RealRashid\SweetAlert\Facades\Alert;
 class PendaftaranController extends Controller
 {
     public function index(Request $request)
-    {
-        if($request->has('cari')){
-            $data_pendaftaran = Pendaftaran::where('nama','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $data_pendaftaran = Pendaftaran::all();
-
-        }
-
-        return view('pendaftaran.index-pdt', ['data_pendaftaran' => $data_pendaftaran]);
-
+{
+    if($request->has('cari')){
+        $data_pendaftaran = Pendaftaran::where('nama','LIKE','%'.$request->cari.'%')->get();
+    } else {
+        // Mengambil data pendaftaran dan mengurutkannya berdasarkan Nama dan NPM
+        $data_pendaftaran = user::with('pendaftaran')->whereNotIn('role', ['admin'])->orderBy('id')->get();
     }
+
+    return view('pendaftaran.index-pdt', ['data_pendaftaran' => $data_pendaftaran]);
+}
+
     public function create(Request $request)
     {
         try {
@@ -60,11 +60,11 @@ class PendaftaranController extends Controller
         return redirect('/pendaftaran-mahasiswa');
 
     }
-    public function edit($no_pendaftaran)
+    public function edit($user_id)
     {
-        $pendaftaran= Pendaftaran::find($no_pendaftaran);
+        $pendaftaran= Pendaftaran::find($user_id);
 
-        $pendaftaran = \App\Models\Pendaftaran::where('no_pendaftaran', $no_pendaftaran)->first();
+        $pendaftaran = Pendaftaran::where('user_id', $user_id)->first();
         if (!$pendaftaran) {
             // Handle kasus jika data pendaftaran tidak ditemukan
             abort(404); // Menampilkan halaman 404 Not Found
@@ -72,25 +72,26 @@ class PendaftaranController extends Controller
         return view('pendaftaran/edit', compact('pendaftaran'));
     }
 
-    public function update(Request $request, $no_pendaftaran)
+    public function update(Request $request, $user_id)
     {
-        $pendaftaran=Pendaftaran::find($no_pendaftaran);
+        $pendaftaran=Pendaftaran::find($user_id);
         $pendaftaran->update($request->all());
         toast('Data Berhasil Di Update','success');
         return redirect('/pendaftaran-mahasiswa');
     }
 
-    public function delete($no_pendaftaran)
+    public function delete($user_id)
     {
-        $pendaftaran= Pendaftaran::find($no_pendaftaran);
+        Pendaftaran::where('user_id', $user_id)->delete();
+        $pendaftaran = User::find($user_id);
         $pendaftaran->delete($pendaftaran);
         toast('Data Berhasil Dihapus','success');
         return redirect ('/pendaftaran-mahasiswa');
     }
 
-    public function profile($no_pendaftaran)
+    public function profile($user_id)
     {
-        $pendaftaran= Pendaftaran::find($no_pendaftaran);
-        return view('pendaftaran.profile',['pendaftaran'=>$pendaftaran]);
+        $user= User::find($user_id);
+        return view('pendaftaran.profile',['user'=>$user]);
     }
 }

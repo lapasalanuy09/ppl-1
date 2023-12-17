@@ -13,8 +13,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function Pendaftaran (){
-        return $this->hasOne(Pendaftaran::class);
+    public function pendaftaran()
+    {
+        return $this->hasOne(Pendaftaran::class, 'user_id');
     }
 
     /**

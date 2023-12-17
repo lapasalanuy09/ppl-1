@@ -8,8 +8,8 @@
                     <li><a href="/data-kegiatan" class="nav-link {{ Request::is('data-kegiatan') ? 'active' : '' }}"><i class="fa fa-database"></i> <span>Data Kegiatan</span></a></li>
                 @endif
                 @if(auth()->user()->role=='user')
-                    <li><a href="/pendaftaranpkkmb" class="nav-link {{ Request::is('pendaftaranpkkmb') ? 'active' : '' }}"><i class="fa fa-database"></i> <span>Pendaftaran</span></a></li>
-                    <li><a href="/detail-kegiatan" class="nav-link {{ Request::is('detail-kegiatan') ? 'active' : '' }}"><i class="fa fa-database"></i> <span>Detail Kegiatan</span></a></li>
+                    <li><a href="/pendaftaranpkkmb" class="nav-link {{ Request::is('pendaftaranpkkmb') ? 'active' : '' }}"><i class="lnr lnr-enter"></i> <span>Pendaftaran</span></a></li>
+                    <li><a href="/detail-kegiatan" class="nav-link {{ Request::is('detail-kegiatan') ? 'active' : '' }}"><i class="lnr lnr-list"></i> <span>Detail Kegiatan</span></a></li>
                 @endif
             </ul>
         </nav>

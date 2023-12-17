@@ -51,7 +51,8 @@
 	<script src="{{asset('template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 	<script src="{{asset('template/assets/scripts/klorofil-common.js')}}"></script>
     <script src="{{asset('template/assets/vendor/chartist/js/chartist.min.js')}}"></script>
-    
+    {{-- @yield('footer') --}}
+
 </body>
 
 </html>

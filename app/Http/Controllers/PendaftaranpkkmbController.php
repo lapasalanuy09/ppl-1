@@ -21,7 +21,6 @@ class PendaftaranpkkmbController extends Controller
     
     public function create(Request $request)
     {
-        
         return view('pendaftaran_pkkmb.daftar');    
     }
         
@@ -29,17 +28,15 @@ class PendaftaranpkkmbController extends Controller
     {   
        $data = $request->validate([
             'no_pendaftaran' => '',
-            'nama' => '',
             'npm' => 'required',
             'jenis_kelamin' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'agama' => 'required',
-            'email' => 'email',
             'angkatan' => 'required',
             'jurusan' => 'required',
             'alamat_domisili' => 'required',
-            'profil' => 'required|file|mimes:jpeg,jpg,png', // Sesuaikan dengan jenis file yang diizinkan
+            'profil' => 'required|file|mimes:jpeg,jpg,png', 
             'nama_ibu' => 'required',
             'nama_ayah' => 'required',
             'pekerjaan_ibu' => 'required',
@@ -72,14 +69,12 @@ class PendaftaranpkkmbController extends Controller
         
         // Simpan data ke database
         Pendaftaran::create([
-            'no_pendaftaran' => Auth::user()->id,
-            'nama' =>Auth::user()->nama,
+            'user_id' => Auth::user()->id,
             'npm' => $request->npm,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
             'agama' => $request->agama,
-            'email' => Auth::user()->email,
             'angkatan' => $request->angkatan,
             'jurusan' => $request->jurusan,
             'alamat_domisili' => $request->alamat_domisili,
@@ -111,7 +106,7 @@ class PendaftaranpkkmbController extends Controller
     {
         //
     }
-        
+
     public function destroy(string $id)
     {
         //

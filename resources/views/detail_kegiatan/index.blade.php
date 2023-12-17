@@ -45,8 +45,18 @@
                                             <p>Lokasi: {{ $kegiatan->lokasi }}</p>
                                             <p>Pemateri: {{ $kegiatan->pemateri }}</p>
                                             <p>Waktu: {{ $kegiatan->waktu }}</p>
+                                            
+                                            <style>
+                                                .modal-body img {
+                                                    max-width: 100%;
+                                                    height: auto;
+                                                    display: block;
+                                                    margin: 0 auto;
+                                                }
+                                            </style>
+                                        
                                             <img src="{{ asset('storage/timeline_images/' . $kegiatan->timeline) }}" alt="Timeline Image">
-                                        </div>
+                                        </div>                                        
                                         <div class="modal-footer">
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>

@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-md-6 float-right">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">email</label>
+                                        <label for="exampleInputEmail1">Email</label>
                                         <input name='email' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="input Email"value="{{$pendaftaran->email}}">
                                     </div>
                                     </div>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="col-md-6 float-left">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">profil</label>
+                                            <label for="exampleInputEmail1">Profil</label>
                                             <input name='profil'type="file" class="form-control">
                                         </div>
                                     </div>

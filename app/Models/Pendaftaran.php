@@ -9,11 +9,10 @@ class Pendaftaran extends Model
 {
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
     protected $table = 'pendaftaran';
-    protected $guarded = ['user_id'];
-    protected $primaryKey = 'no_pendaftaran';
+    protected $guarded = ['id'];
     
     public static $rules = [
         'pembelian_merchandise' => 'in:Ya,Tidak', // Hanya menerima nilai "Ya" atau "Tidak"

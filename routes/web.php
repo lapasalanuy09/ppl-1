@@ -20,6 +20,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/postlogin', 'postlogin');
     Route::get('/logout', 'logout');
+    
 });
 
 Route::controller(RegisterController::class)->group(function () {
@@ -31,15 +32,20 @@ Route::group(['middleware'=>['auth','checkRole:admin']], function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/pendaftaran-mahasiswa', [PendaftaranController::class, 'index'])->name('pendaftaran');
     Route::post('/pendaftaran-mahasiswa/create', [PendaftaranController::class, 'create']);
-    Route::get('/pendaftaran-mahasiswa/{no_pendaftaran}/edit', [PendaftaranController::class, 'edit']);
-    Route::post('/pendaftaran-mahasiswa/{no_pendaftaran}/update', [PendaftaranController::class, 'update']);
-    Route::get('/pendaftaran-mahasiswa/{no_pendaftaran}/delete',  [PendaftaranController::class, 'delete']); 
-    Route::get('/pendaftaran-mahasiswa/{no_pendaftaran}/profile',  [PendaftaranController::class, 'profile']);
+    Route::get('/pendaftaran-mahasiswa/{user_id}/edit', [PendaftaranController::class, 'edit']);
+    Route::post('/pendaftaran-mahasiswa/{user_id}/update', [PendaftaranController::class, 'update']);
+    Route::get('/pendaftaran-mahasiswa/{user_id}/delete',  [PendaftaranController::class, 'delete']); 
+    Route::get('/pendaftaran-mahasiswa/{user_id}/profile',  [PendaftaranController::class, 'profile']);
     Route::get('/data-kegiatan', [DataKegiatanController::class, 'index']);
     Route::post('/data-kegiatan/create', [DataKegiatanController::class, 'create']);
     Route::get('/data-kegiatan/{id}/edit', [DataKegiatanController::class, 'edit']);
     Route::post('/data-kegiatan/{id}/update', [DataKegiatanController::class, 'update']);
     Route::get('/data-kegiatan/{id}/delete',  [DataKegiatanController::class, 'delete']);
+
+    Route::get('/dashboard/profil/{id}',[DashboardController::class, 'profil'])->name('myprofil');
+    Route::get('/dashboard/profil/edit/{id}',[DashboardController::class, 'updateView' ])->name('editprofil');
+    Route::post('/dashboard/profil/edit/{id}',[DashboardController::class, 'update' ])->name('updateprofil');
+
 });
 
 Route::group(['middleware'=>['auth','checkRole:admin,user']], function(){
@@ -48,4 +54,9 @@ Route::group(['middleware'=>['auth','checkRole:admin,user']], function(){
     Route::get('/pendaftaran_pkkmb/daftar',[PendaftaranpkkmbController::class, 'create']);
     Route::post('/pendaftaran_pkkmb/daftar',[PendaftaranpkkmbController::class, 'store']);
     Route::get('/detail-kegiatan', [DetailkegiatanController::class, 'index']);
+
+    Route::get('/dashboard/profil/{id}',[DashboardController::class, 'profil'])->name('myprofil');
+    Route::get('/dashboard/profil/edit/{id}',[DashboardController::class, 'updateView' ])->name('editprofil');
+    Route::post('/dashboard/profil/edit/{id}/{user_id}',[DashboardController::class, 'update' ])->name('updateprofil');
+
 });

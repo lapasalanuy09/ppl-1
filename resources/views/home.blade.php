@@ -46,7 +46,6 @@
                     <li class="nav-item"><a class="nav-link" href="#about" style="color: white;">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services" style="color: white;">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio" style="color: white;">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" style="color: white;">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="/login" style="color: white;">Masuk</a></li>
                 </ul>
             </div>
@@ -177,81 +176,6 @@
         <div class="container px-4 px-lg-5 text-center">
             <h2 class="mb-4">UNIVERSITAS BENGKULU</h2>
             <a class="btn btn-light btn-xl" href="https://unib.ac.id/">Kunjungi Website!</a>
-        </div>
-    </section>
-    <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 col-xl-6 text-center">
-                    <h2 class="mt-0">Hubungi Kami!</h2>
-                    <hr class="divider">
-                    <p class="text-muted mb-5">Kirimkan pertanyaan, saran, maupun kritik kepada kami dan kami akan segera merespons Anda!</p>
-                </div>
-            </div>
-            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-                <div class="col-lg-6">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Name input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
-                            <label for="name">Nama Lengkap</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">harus diisi.</div>
-                        </div>
-                        <!-- Email address input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" data-sb-can-submit="no">
-                            <label for="email">Alamat Email</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">harus diisi.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email tidak valid.</div>
-                        </div>
-                        <!-- Phone number input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" data-sb-can-submit="no">
-                            <label for="phone">Nomor HP</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">harus diisi.</div>
-                        </div>
-                        <!-- Message input-->
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
-                            <label for="message">Pesan</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">harus diisi.</div>
-                        </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br>
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                        <!-- Submit Button-->
-                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Kirim</button></div>
-                    </form>
-                </div>
-            </div>
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                    <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                    <div>0736-345805</div>
-                </div>
-            </div>
         </div>
     </section>
     <!-- Footer-->

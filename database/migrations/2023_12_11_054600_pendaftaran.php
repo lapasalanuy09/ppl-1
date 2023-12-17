@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id(); 
-            $table->foreignId('no_pendaftaran')->constrained('users');
-            $table->string('nama');
+            $table->foreignId('user_id')->constrained();
             $table->string('npm');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
             $table->string('tempat_lahir');
@@ -22,7 +21,6 @@ return new class extends Migration
             $table->string('agama');
             $table->integer('angkatan');
             $table->string('jurusan');
-            $table->string('email');
             $table->string('alamat_domisili');
 	        $table->string('profil');
             $table->string('nama_ibu');
@@ -33,6 +31,7 @@ return new class extends Migration
             $table->enum('jalur_pendaftaran', ['SNBP', 'SNBT', 'MANDIRI']);
             $table->enum('pembelian_merchandise', ['Ya', 'Tidak']);
             $table->timestamps();
+
         });
     }
 
