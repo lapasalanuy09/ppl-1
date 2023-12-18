@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('angkatan');
             $table->string('jurusan');
             $table->string('alamat_domisili');
-	        $table->string('profil');
+	        $table->string('profil')->nullable();
             $table->string('nama_ibu');
             $table->string('nama_ayah');
             $table->string('pekerjaan_ibu');

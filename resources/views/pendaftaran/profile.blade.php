@@ -12,10 +12,11 @@
                         <div class="profile-header">
                             <div class="overlay"></div>
                             <div class="profile-main">
-                          
+                                @if ($user->pendaftaran == null)
+                                <img src="" class="img-circle" width="100" height="100" alt="Foto Profil">
+                                @else
                                 <img src="{{ asset('storage/' . $user->pendaftaran->profil) }}" class="img-circle"width="100" height="100" alt="Foto Profil">
-                                <h3 class="name">{{$user->nama}}</h3>
-                                <span class="online-status status-available">Available</span>
+                                @endif
                             </div>
                         </div>
                         <!-- END PROFILE HEADER -->

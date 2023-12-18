@@ -50,12 +50,12 @@ class PendaftaranpkkmbController extends Controller
             // Menangani file profil
             $profilFile = $request->file('profil');
             $profilFileName = time() . '_' . $profilFile->getClientOriginalName();
-            $profilFilePath = $profilFile->storeAs('profil', $profilFileName, 'public'); // Sesuaikan direktori penyimpanan
+            $profilFilePath = $profilFile->storeAs('profil', $profilFileName); // Sesuaikan direktori penyimpanan
         
             // Menangani file bukti pembayaran
             $buktiPembayaranFile = $request->file('bukti_pembayaran');
             $buktiPembayaranFileName = time() . '_' . $buktiPembayaranFile->getClientOriginalName();
-            $buktiPembayaranFilePath = $buktiPembayaranFile->storeAs('bukti_pembayaran', $buktiPembayaranFileName, 'public'); // Sesuaikan direktori penyimpanan
+            $buktiPembayaranFilePath = $buktiPembayaranFile->storeAs('bukti_pembayaran', $buktiPembayaranFileName); // Sesuaikan direktori penyimpanan
         } else {
             // Jika salah satu atau kedua file tidak diunggah, Anda mungkin ingin memberikan pesan kesalahan atau melakukan tindakan lain sesuai kebutuhan aplikasi Anda.
             return redirect('/pendaftaran_pkkmb.daftar')->with('error', 'File profil dan bukti pembayaran harus diunggah.');

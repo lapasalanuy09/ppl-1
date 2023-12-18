@@ -12,11 +12,11 @@
                         <div class="profile-header">
                             <div class="overlay"></div>
                             <div class="profile-main">
-                                @php
-                                    $profileFileName = pathinfo($profil->pendaftaran->profil, PATHINFO_FILENAME);
-                                @endphp
-                                <p></p> 
+                                @if ($profil->pendaftaran == null)
+                                <img src="" class="img-circle" width="100" height="100" alt="Foto Profil">
+                                @else
                                 <img src="{{ asset('storage/' . $profil->pendaftaran->profil) }}" class="img-circle" width="100" height="100" alt="Foto Profil">
+                                @endif
                             </div>
                         </div>
                         <!-- END PROFILE HEADER -->
@@ -37,7 +37,11 @@
                                 <!-- Additional profile info can be added here -->
                             </div>
                             <div class="text-center">
+                                @if ($profil->pendaftaran == null) 
+                                <button disabled class="btn btn-primary">Edit Profile</button>
+                                @else
                                 <a href="{{ route('editprofil', ['id' => $profil->id]) }}" class="btn btn-primary">Edit Profile</a>
+                                @endif
                             </div>
                         </div>
                     </div>

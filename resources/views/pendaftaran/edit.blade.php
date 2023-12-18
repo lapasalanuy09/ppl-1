@@ -11,19 +11,19 @@
                                 <h3 class="panel-title">Data Mahasiswa</h3>
                             </div>
                             <div class="panel-body">
-                                <form action="/pendaftaran-mahasiswa/{{$pendaftaran->no_pendaftaran}}/update" method="POST" enctype="multipart/form-data">
+                                <form action="/pendaftaran-mahasiswa/{{$pendaftaran->id}}/{{ $pendaftaran->user->id }}/update" method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{-- data pribadi --}}
                                     <div class="col-md-6">
                                     <div class="form-group float-left">
                                         <label for="exampleInputEmail1">No Pendaftaran</label>
-                                        <input name='no_pendaftaran' type="text" class="form-control" id="no_pendaftaran" aria-describedby="emailHelp" placeholder="Input No Pendaftaran" value="{{$pendaftaran->no_pendaftaran}}">
+                                        <input name='no_pendaftaran' type="text" class="form-control" id="no_pendaftaran" aria-describedby="emailHelp" placeholder="Input No Pendaftaran" value="{{$pendaftaran->user_id}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 float-right">
                                     <div class="form-group ">
                                       <label for="exampleInputEmail1">Nama Lengkap</label>
-                                      <input name='nama'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Nama"value="{{$pendaftaran->nama}}">
+                                      <input name='nama'type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Nama"value="{{$pendaftaran->user->nama}}">
                                     </div>
                                     </div>
                                     <div class="col-md-6">
@@ -69,7 +69,7 @@
                                     <div class="col-md-6 float-right">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input name='email' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="input Email"value="{{$pendaftaran->email}}">
+                                        <input name='email' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="input Email"value="{{$pendaftaran->user->email}}">
                                     </div>
                                     </div>
                                     <div class="col-md-6 float-left">
@@ -143,7 +143,7 @@
                                     {{-- data merchandise --}}
                                     <div class="form-group">
                                         <label for="photo" class="form-label">Bukti Pembayaran</label><br>
-                                        <input name='bukti_pembayaran' type="file" id="photo" name="photo" required>
+                                        <input name='bukti_pembayaran' type="file" id="photo" name="photo" >
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Jalur Pendaftaran</label>

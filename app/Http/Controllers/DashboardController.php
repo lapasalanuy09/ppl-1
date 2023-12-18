@@ -71,9 +71,8 @@ class DashboardController extends Controller
             }
             
             // Simpan foto yang baru di direktori 'profil'
-            $profilFileName = $request->file('profil')->getClientOriginalName();
-            $request->file('profil')->move('images/', $profilFileName);
-            $user_id->profil = $profilFileName;
+            $profilFileName = time() . '_' .  $request->file('profil')->getClientOriginalName();
+            $user_id->profil = $request->file('profil')->storeAs('profil', $profilFileName);;
         }
         $user_id->save();
         // Update data profil pada instance model
